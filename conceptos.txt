@@ -1,0 +1,25 @@
+Abstract Syntax Tree (AST):
+ Es una estructura de datos que represanta
+ el codigo del programa.
+
+Syntax Error:
+Cuando parser analiza el programa
+y no le hace algun sentido ocurre un 
+syntax error. Es lanzado cuando el motor de javascript
+se encuentra con partes del codigo que no forman parte
+de la sintaxys del lenguaje al momoneto de analizar el 
+codigo.
+
+Bundling y code splitting:
+El codigo se empaqueta de forma eficiente, es decir separar
+el codigo y solo se va acargar cuando sea necesario. Como en SPA
+
+Bytecode:
+Es una abstraccion del codigo maquina y es facil de compilar,
+es portatil, ejecutado por una virtual machine.
+
+Profiling data:
+Analiza la ejecucion y va encotrar los puntos donde el programa 
+se puede optimizar.
+
+
