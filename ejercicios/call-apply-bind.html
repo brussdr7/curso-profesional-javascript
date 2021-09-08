@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>call-apply-bind</title>
+</head>
+<body>
+    <a href="/ejercicios/">Go back</a>
+    <p>Abre la consola</p>
+    <script>
+        // Estos metodos son parte del prototipo de function
+        // sirven para establecer el valor de this, es decir
+        // cambiar el contexto que se va usar cuando la funcion se llama
+
+        // Call
+        function saludar() {
+            console.log(`Hola soy ${this.nombre} ${this.apellido}`);
+        }
+        const persona = {
+            nombre: 'bruno',
+            apellido: 'duran',
+        }
+        // saludar.call(Obj, param1, param2, ...paramN );
+        saludar.call(persona);
+        // un ejemplo con argumentos
+        function caminar(distancia, direccion) {
+            console.log(`${this.nombre} camino ${distancia} metros, hacia el ${direccion}`);
+        }
+        caminar.call(persona, 500, 'oeste');
+
+        // apply
+        function walk(distancia, direccion) {
+            console.log(`${this.nombre} camino ${distancia} metros, hacia el ${direccion}`);
+        }
+        // walk.apply(object, ...array);
+        walk.apply(persona, [400, 'norte']);
+        // Ladiferencia es que podemos pasar un arreglo como argumento
+
+        // bind
+        // retorna una nueva funcion con un nuevo contexto
+        const persona2 = {
+            nombre: 'David',
+            apellido: 'Duran',
+        }
+        function saluda() {
+            console.log(`Hola soy ${this.nombre}`);
+        }
+        saluda.bind(persona2); // no imprime nada
+        const davidSaluda = saluda.bind(persona2);
+        davidSaluda();
+        // ejemplo con parametros
+        function corre(metros, direccion) {
+            console.log(`${this.nombre} corre ${metros} metros, hacia el ${direccion}`);
+        }
+        const davidCorre = corre.bind(persona2, 100, 'este');
+        davidCorre();
+
+        // function curryIng
+        // esta tecnica nos permite guardar valores parciales
+        function trotar(metros, direccion) {
+            console.log(`${this.nombre} trota ${metros} metros, hacia el ${direccion}`);
+        }
+        const davidTrota = trotar.bind(persona2, 300);
+        davidTrota('sur');
+        // obtenemos el mismo resultado que el anterior ejemplo, sin embargo
+        // guarda un parametro que es la distancia
+    </script>
+</body>
+</html>
