@@ -22,4 +22,34 @@ Profiling data:
 Analiza la ejecucion y va encotrar los puntos donde el programa 
 se puede optimizar.
 
+Event Loop:
+Hace que javascript paresca multi hilo a pesar de que corre un
+solo proceso. Es un loop que se esta ejecutando todo el tiempo
+y pasa periodicamente revizando las queues y el stack.
 
+Memory heap:
+De forma desorganizada se guarda informacion de variables, funciones
+y del scope.
+
+Scope:
+Esta determinado por el conjunto de variables parametros y funciones
+que se pueden acceder desde esa funcion cuando se esta ejecutando.
+
+Call stack:
+Va apilando de forma organizada las diferentes instrucciones que se
+llaman.
+
+Schedule task:
+Aqui se colocan las tareas agendadas. Son tareas que se van a ejecutar
+en un futuro no de forma inmediata.
+
+Micro task queue:
+Aqui se almacenan las promesas. Esta queue es la que tiene mayor
+prioridad.
+
+Task queue:
+Aqui se agregan las tareas que estan listas para ser agregadas al
+stack y ser ejecutadas. El stack debe estar vsacio para que esto suceda.
+
+Promesas estados:
+Etado pending, estado fulfilled, estado rejected.
