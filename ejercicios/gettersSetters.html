@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters & Setters</title>
+</head>
+<body>
+    <h1>Abre la consola</h1>
+    <script>
+        //objeto definiendo una propiedad con Object.defineProperty
+        const persona = {
+            nombre: 'Estela',
+            apellido: 'Hernandez',
+        };
+        Object.defineProperty(persona, 'nombreCompleto',{
+            get: function(){
+                return `${this.nombre} ${this.apellido}`;
+            },
+            set: function(value){
+                const data = value.split('');
+                for(let i = 0; i < data.length; i++) {
+                    if(data[i] == ' '){
+                        var nombre = data.slice(0, i).join('');
+                        var apellido = data.slice(i + 1).join('');
+                    }
+                }
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+        });
+        //objeto con propiedad get y set
+        const persona = {
+            nombre: "Bruno",
+            apellido: "Duran",
+            get nombreCompleto(){
+                return `${this.nombre} ${this.apellido}`;
+            },
+            set nombreCompleto(value){
+                const data = value.split('');
+                for(let i = 0; i < data.length; i++) {
+                    if(data[i] == ' '){
+                        var nombre = data.slice(0, i).join('');
+                        var apellido = data.slice(i + 1).join('');
+                    }
+                }
+                this.nombre = nombre;
+                this.apellido = apellido;
+            }
+        }
+        console.log(persona.nombreCompleto);
+
+        persona.nombreCompleto = "Rosa Rodriguez";
+        console.log(persona.nombreCompleto);
+    </script>
+</body>
+</html>

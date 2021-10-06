@@ -53,3 +53,7 @@ stack y ser ejecutadas. El stack debe estar vsacio para que esto suceda.
 
 Promesas estados:
 Etado pending, estado fulfilled, estado rejected.
+
+Getters y Setters:
+Son funciones que podemos usar en un objeo pra tener propiedadesvirtuales.
+
