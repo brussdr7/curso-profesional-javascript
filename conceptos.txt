@@ -1,3 +1,8 @@
+DOM:
+document object model
+Es la representacion que hace el navegador de un documento html, cuando el navegador
+recibe el archivo lo convierte en algo parecido a una estructura jerárquica.
+
 Abstract Syntax Tree (AST):
  Es una estructura de datos que represanta
  el codigo del programa.
